@@ -10,13 +10,18 @@ use DB;
 class CitiesTableSeeder extends Seeder
 {
 
-     public function run()
+     public function run(Request $request): void
     {
 
-        if ($city) {
-            DB::table('cities')->insert([
-                'name' => $city,
-            ]);
-        }
+        DB::table('cities')->insert([
+            ['name' => 'a']
+        ]);
+
+        // if ($city) {
+
+        //     DB::table('cities')->insert([
+        //         'name' => $city,
+        //     ]);
+        // }
     }
 }

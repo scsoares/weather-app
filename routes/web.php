@@ -2,19 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CitiesController;
+
 use App\Http\Controllers\WeatherController;
 
-Route::get('/', function () {
-    return view('weather.index');
-});
+// setting root route first before the others
 
-Route::get('/weather-list', function () {
-    return view('weather.list');
-});
-
-
-Route::resource('weathers', WeatherController::class);
-
-Route::get('/weather-list', [WeatherController::class, 'getWeather']);
-
-Route::post('/weather-list', [CitiesController::class, 'handle'])->name('weatherList');
+Route::get('/', [CitiesController::class, 'index'])->name('weather.index');
+Route::post('/', [CitiesController::class, 'store'])->name('weather.store');
+Route::delete('/weather/{id}', [CitiesController::class, 'destroy'])->name('weather.destroy');
