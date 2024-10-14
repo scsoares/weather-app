@@ -13,7 +13,6 @@ class CitiesController extends Controller
 {
     public function index()
     {
-        // Stores all City (eloquent model) data in a cities variable a returns
         $cities = City::all();
 
         $weatherData = [];
@@ -35,16 +34,37 @@ class CitiesController extends Controller
             $response = $client->get($apiUrl);
             return json_decode($response->getBody(), true);
         } catch (\Exception $e) {
-            // Return null or an error message if something goes wrong
-            return null; // or ['error' => $e->getMessage()];
+            return ['error' => $e->getMessage()];
         }
     }
-    
+
+
     public function store(Request $request)
     {
-        City::create($request->all());
-        return redirect()->route('weather.index')->with('success', 'City stored successfully.');
+        $apiKey = env('WEATHER_API_KEY');
+        $client = new Client();
+
+        $cityName = $request->input('name');
+
+    
+        $apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid={$apiKey}";
+
+        try {
+            $response = $client->get($apiUrl);
+            $data = json_decode($response->getBody(), true);
+
+            // code to check if the API response is valid
+            if ($data['cod'] === 200) {
+                City::create(['name' => $data['name']]);
+
+                return redirect()->back()->with('success', 'City added successfully.');
+            }
+        } catch (\Exception $e) {
+            // if city not found, flash an error message in the index.blade.php
+            return redirect()->back()->with('error', 'City not found. Please try again.');
+        }
     }
+
     
     public function destroy($id)
     {
