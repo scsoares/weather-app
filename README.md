@@ -6,16 +6,6 @@ This Weather App allows users to search for cities and retrieve weather informat
 
 <img src="readme-img/app-overview.png" alt="Weather app overview" style="box-shadow: 3px 3px 3px gray;">
 
-## Table of Contents
-
--   [Prerequisites](#prerequisites)
--   [Installation](#installation)
--   [Usage](#usage)
--   [API Key Configuration](#api-key-configuration)
--   [Running the Application](#running-the-application)
--   [Contributing](#contributing)
--   [License](#license)
-
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
