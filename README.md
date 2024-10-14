@@ -64,6 +64,10 @@ Before you begin, ensure you have met the following requirements:
 
 8. Run the migrations:
 
+   ```bash
+    php artisan migrate
+    ```
+
 ## API Key Configuration
 
 To use the OpenWeather API, you'll need an API key:
