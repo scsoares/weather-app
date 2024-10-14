@@ -48,7 +48,7 @@ Before you begin, ensure you have met the following requirements:
     Copy the .env.example file to a new file named .env.
 
     ```bash
-    npm run dev
+    cp .env.example .env
     ```
 
 6. Generate your application key:
