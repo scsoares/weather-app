@@ -86,6 +86,8 @@ To run the application, make sure you have completed the setup above. Then, star
 php artisan serve
 ```
 
+Finally, visit http://localhost:8000 in your web browser.
+
 ## Built With
 
 `PHP` `laravel` `blade` `mysql` `bladewindUI`
