@@ -4,7 +4,7 @@
 
 This Weather App allows users to search for cities and retrieve weather information from the OpenWeather API. Users can add cities to a list, which displays the current weather conditions for each city and local time.
 
-<img src="readme-img/app-overview.jpg" alt="Weather app overview" style="box-shadow: 3px 3px 3px gray;">
+<img src="readme-img/app-overview.png" alt="Weather app overview" style="box-shadow: 3px 3px 3px gray;">
 
 ## Table of Contents
 
